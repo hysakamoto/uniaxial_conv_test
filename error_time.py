@@ -1,7 +1,6 @@
 from subprocess import call
 from numpy import *
 import matplotlib.pyplot as plt
-
 from numerical_integration import *    
 from plot_errors import *
 from IO_sim import *
@@ -42,9 +41,6 @@ for i in range(1,n_sim):
     
     dt.append(0.5/2.0**float(i-1))
 
-        # point_error( xyzp_set[n_sim-1][-1], xyzp_set[i][-1], \
-        #                        nodes_set[-1], elems_set[-1]  )
-
     Exs.append(Ex)
     Eys.append(Ey)
     Ezs.append(Ez)
@@ -57,29 +53,3 @@ print "Ep = ", Eps
 
 plot_errors(Exs, Eys, Ezs, Eps, dt)
 
-
-# xmin = 0.0
-# xmax = 0.5
-# ymin = 0.0
-# ymax = 0.5
-# zmin = 0.0
-# zmax = 1.0
-# xlen = 0.5
-# ylen = 0.5
-# zlen = 1.0
-
-# tree = []
-# max_depth = 4
-# # for i in range(1):
-# tree = build_octree(0, tree, elems, nodes, xmin, xmax, ymin, ymax, zmin, zmax, xlen, ylen, zlen, max_depth)
-
-
-# xyz_range = [[0,0.5], [0,0.5], [0,1.0]]
-# sim_num = 2
-# max_depth = 5
-
-# tree = space_integrate_error_2 ( xyzp_set[-1][-1], xyzp_set[sim_num][-1], \
-#                           nodes_set[-1], nodes_set[sim_num], \
-#                           elems_set[-1], elems_set[sim_num], \
-#                           max_depth,\
-#                           xyz_range )
